@@ -15,22 +15,14 @@ export default function App() {
 
   const images = imagesArr.map((object, arrayIdx) => {
     return (
-      <span
-        style={
-          object.img === bigImage
-            ? { border: "solid green" }
-            : { border: "none" }
-        }
-      >
-        {" "}
-        <img
-          className="thumb"
-          key={arrayIdx}
-          src={object.img}
-          alt={object.city}
-          onClick={() => HandleClick(object.img)}
-        />
-      </span>
+      <img
+        style={{ border: object.img === bigImage ? "solid green" : "none" }}
+        className="thumb"
+        key={arrayIdx}
+        src={object.img}
+        alt={object.city}
+        onClick={() => HandleClick(object.img)}
+      />
     );
   });
 
